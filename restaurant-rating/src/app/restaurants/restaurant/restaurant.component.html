@@ -1,0 +1,26 @@
+<form #form="ngForm" (submit)="onSubmit(form)">
+    <div class="form-group">
+        <label>Name</label>
+        <input name="restaurant_name" #restaurant_name = "ngModel" [(ngModel)]="service.formData.restaurant_name" class="form-control" required>
+        <div class="validation-error"*ngIf="restaurant_name.invalid && restaurant_name.touched">This field is required.</div>
+    </div>
+    <div class="form-group">
+        <label>Address</label>
+        <input name="full_address" #full_address = "ngModel" [(ngModel)]="service.formData.full_address" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <input name="restaurant_description" #restaurant_description = "ngModel" [(ngModel)]="service.formData.restaurant_description" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Opens</label>
+        <input name="opens" #opens = "ngModel" [(ngModel)]="service.formData.opens" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Closes</label>
+        <input name="closes" #opens = "ngModel" [(ngModel)]="service.formData.closes" class="form-control">
+    </div>
+    <div class="form-group">
+        <button type="submit" [disabled]="form.invalid" class="btn btn-lg btln-block">SUBMIT</button>
+    </div>
+</form>
